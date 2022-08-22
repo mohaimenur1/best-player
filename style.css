@@ -66,4 +66,5 @@ input {
 
 li {
   color: white;
+  list-style-type: decimal;
 }

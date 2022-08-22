@@ -8,18 +8,33 @@ function addTexttoSidebar(polayerName) {
 function createElementWithPlayerName(playerName) {
   let ul = document.getElementById("ul-id");
   const li = document.createElement("li");
+
   li.appendChild(document.createTextNode(playerName));
+  li.className = "li-item";
   ul.appendChild(li);
+  let countAllLi = document.querySelectorAll(".li-item").length;
+
+  if (countAllLi > 5) {
+    alert("you can not add more than that!");
+    ul.removeChild(li);
+  }
+  console.log(countAllLi);
   console.log(li);
   return li;
 }
+
+// function countLiElement(){
+
+// }
 
 // p1
 document.getElementById("add-btn-1").addEventListener("click", function () {
   console.log("add button clicked");
   //text showing
+
   const palyerName = addTexttoSidebar("player-name-1");
   let newListCreated = createElementWithPlayerName(palyerName);
+  // if (document.getElementById("add-btn-1"))
 });
 
 //p2
