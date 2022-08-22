@@ -136,6 +136,15 @@ function inputValueById(inputId) {
   // }
 }
 
+function totalExpenseValue(totalExpenseId) {
+  const totalExpenseValue = document.getElementById(totalExpenseId);
+  let totalExpenseValueString = totalExpenseValue.innerText;
+  let totalExpenseValueNumber = parseInt(totalExpenseValueString);
+  totalExpenseValue.innerText = totalExpenseValueNumber;
+
+  return totalExpenseValueNumber;
+}
+
 function setTheNewTotal(totalExpense, newTotal) {
   let previousTotalExpense = document.getElementById(totalExpense);
   let previousTotalExpenseString = previousTotalExpense.innerText;
@@ -171,4 +180,15 @@ document
 
 document
   .getElementById("total-cost-btn")
-  .addEventListener("click", function () {});
+  .addEventListener("click", function () {
+    let playerExpenses = totalExpenseValue("player-expense-total");
+    console.log(typeof playerExpenses);
+    let managerExpenses = inputValueById("manager-expense-input");
+    console.log(managerExpenses);
+    let coachExpenses = inputValueById("coach-expense-input");
+    console.log(coachExpenses);
+    let totalExpenses = playerExpenses + managerExpenses + coachExpenses;
+
+    let setNewTotalExpense = setTheNewTotal("total-expense-id", totalExpenses);
+    console.log(setNewTotalExpense);
+  });
