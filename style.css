@@ -1,0 +1,65 @@
+/* Header font style 
+font-family: 'Fredoka One', cursive;
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+/* bodyfont style 
+
+font-family: 'Manrope', sans-serif;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+:root {
+  --body-bg-color: #4d3e52;
+  --card-bg-color: #2d132c;
+  --button-bg-color: #4d3e52;
+  --text-color: #ffffff;
+}
+
+body {
+  color: val(--text-color);
+  background-color: var(--body-bg-color);
+}
+
+/* banner section */
+.bg-custom {
+  background-color: var(--card-bg-color);
+}
+
+.bg-custom h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 4rem;
+}
+
+.bg-custom p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  text-align: start;
+}
+
+/* main section */
+main {
+  background-color: var(--body-bg-color);
+}
+
+/* card section */
+.card {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+}
+
+.card-btn-bg {
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border-radius: 11px;
+}
+
+input {
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+}
