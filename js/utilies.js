@@ -30,11 +30,11 @@ function inputValueById(inputId) {
   let inputValueString = inputValue.value;
   let inputValueNumber = parseInt(inputValueString);
   inputValue.value = inputValueNumber;
-  // if (inputValueString === "") {
-  //   return alert("Please provide only number");
-  // } else {
-  return inputValueNumber;
-  // }
+  if (inputValueString === "" || inputValueString === NaN) {
+    return alert("Please provide only number");
+  } else {
+    return inputValueNumber;
+  }
 }
 
 function totalExpenseValue(totalExpenseId) {
