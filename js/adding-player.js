@@ -18,14 +18,10 @@ function createElementWithPlayerName(playerName) {
     alert("you can not add more than that!");
     ul.removeChild(li);
   }
-  console.log(countAllLi);
+  console.log(typeof countAllLi);
   console.log(li);
-  return li;
+  return ul;
 }
-
-// function countLiElement(){
-
-// }
 
 // p1
 const addBtn1 = document.getElementById("add-btn-1");
@@ -125,3 +121,54 @@ document.getElementById("add-btn-6").addEventListener("click", function () {
     btnDisable6.classList.add("disabled");
   }
 });
+
+//per player function
+
+function inputValueById(inputId) {
+  const inputValue = document.getElementById(inputId);
+  let inputValueString = inputValue.value;
+  let inputValueNumber = parseInt(inputValueString);
+  inputValue.value = inputValueNumber;
+  // if (inputValueString === "") {
+  //   return alert("Please provide only number");
+  // } else {
+  return inputValueNumber;
+  // }
+}
+
+function setTheNewTotal(totalExpense, newTotal) {
+  let previousTotalExpense = document.getElementById(totalExpense);
+  let previousTotalExpenseString = previousTotalExpense.innerText;
+  let newPreviousTotalExpense = parseInt(previousTotalExpenseString);
+  previousTotalExpense.innerText = newTotal;
+  return newPreviousTotalExpense;
+}
+
+//per player button event
+
+document
+  .getElementById("per-player-btn")
+  .addEventListener("click", function () {
+    console.log("calculate per player amount clicked");
+
+    let inputValue = inputValueById("per-player-expense-input");
+    console.log(inputValue);
+
+    let countAllLi = document.querySelectorAll(".li-item").length;
+
+    let totalPerPlayerExpense = inputValue * countAllLi;
+    console.log(totalPerPlayerExpense);
+
+    let newPerPlayerExpenseTotal = setTheNewTotal(
+      "player-expense-total",
+      totalPerPlayerExpense
+    );
+
+    console.log(typeof newPerPlayerExpenseTotal);
+  });
+
+// total cost Calculation
+
+document
+  .getElementById("total-cost-btn")
+  .addEventListener("click", function () {});

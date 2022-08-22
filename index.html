@@ -208,9 +208,9 @@
               <div class="card-body">
                 <h5 class="card-title text-center text-center">Budget</h5>
                 <div class="input-group flex-nowrap mb-3">
-                  <span class="m-2" id="addon-wrapping">Rent:</span>
+                  <span class="m-2" id="addon-wrapping">Per Player:</span>
                   <input
-                    id="rent-expense"
+                    id="per-player-expense-input"
                     type="text"
                     class="input-desgin"
                     aria-label="Username"
@@ -218,12 +218,14 @@
                   />
                 </div>
                 <div class="d-grid">
-                  <button class="btn card-btn-bg btn-dis">Choose Player</button>
+                  <button id="per-player-btn" class="btn card-btn-bg">
+                    Calculate
+                  </button>
                 </div>
                 <div class="expense container mt-3 p-1">
                   <div class="player-expense mb-3">
                     <h6>
-                      Player Expense <span id="player-expense-total">5000</span>
+                      Player Expense <span id="player-expense-total">0</span>
                     </h6>
                   </div>
 
@@ -248,7 +250,9 @@
                     />
                   </div>
                   <div class="d-grid">
-                    <button class="btn card-btn-bg">Choose Player</button>
+                    <button id="total-cost-btn" class="btn card-btn-bg">
+                      Calculate Total
+                    </button>
                   </div>
                 </div>
                 <!-- total section -->
